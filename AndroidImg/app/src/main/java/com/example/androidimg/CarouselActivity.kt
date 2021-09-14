@@ -1,5 +1,6 @@
 package com.example.androidimg
 
+import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
@@ -28,8 +29,7 @@ class CarouselActivity : Fragment(R.layout.activity_carousel) {
 
         btnIzq.setOnClickListener{ backImage() }
         btnDer.setOnClickListener{ nextImage() }
-        //btnInf.setOnClickListener{ infImage() }
-        IniFavorite.setOnClickListener { Toast.makeText(context, "Me gusta el sonido", Toast.LENGTH_SHORT).show() }
+        btnInf.setOnClickListener{ infImage() }
 
         Image.images.forEach {
             if (it.id == getChanges().id) {
@@ -60,10 +60,14 @@ class CarouselActivity : Fragment(R.layout.activity_carousel) {
         }
     }
 
-    /*
-    private fun infImage(){
-        startActivity(Intent(this, InfoActivity::class.java).apply { putExtra("selectedImage", Image.images[cont]) })
-    }*/
+    private fun infImage() {
+        (requireActivity() as MainActivity).replaceFragment(InfoActivity().apply {
+            arguments = Bundle().apply {
+                putParcelableArray("ImagesArray", Image.images)
+                putInt("selectedImage", cont)
+            }
+        })
+    }
 
     private fun getChanges(): Image {
         return (requireActivity() as MainActivity).preferences.getString(

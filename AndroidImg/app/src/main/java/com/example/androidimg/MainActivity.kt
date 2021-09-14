@@ -11,9 +11,6 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import com.squareup.moshi.Moshi
 
-private val Peferen = "Preferencias"
-private lateinit var preferences: SharedPreferences
-private val moshi = Moshi.Builder().build()
 
 class MainActivity : AppCompatActivity() {
 

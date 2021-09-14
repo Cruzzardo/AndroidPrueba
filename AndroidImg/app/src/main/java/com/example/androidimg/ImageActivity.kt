@@ -13,7 +13,7 @@ class ImageActivity : Fragment(R.layout.activity_image) {
     private lateinit var image: Image
 
     private fun initView(){
-        image = requireArguments().getParcelable("ImageSource") ?: Image()
+        image = requireArguments().getParcelable("imageSource") ?: Image()
         FinalPicture = requireView().findViewById(R.id.FinalPicture)
         FinalPicture.setImageResource(image.source)
     }
