@@ -3,12 +3,11 @@ package com.example.androidimg
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 
-class ImageActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_image)
-
+class ImageActivity : Fragment(R.layout.activity_image) {
+    override fun onResume() {
+        super.onResume()
         initView()
     }
 
@@ -16,8 +15,8 @@ class ImageActivity : AppCompatActivity() {
     private lateinit var image: Image
 
     private fun initView(){
-        image = intent.getParcelableExtra("ImageSource") ?: Image()
-        FinalPicture = findViewById(R.id.FinalPicture)
+        image = requireArguments().getParcelable("ImageSource") ?: Image()
+        FinalPicture = requireView().findViewById(R.id.FinalPicture)
         FinalPicture.setImageResource(image.source)
     }
 }

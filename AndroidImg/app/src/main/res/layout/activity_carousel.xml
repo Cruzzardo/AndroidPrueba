@@ -18,7 +18,7 @@
     <ImageView
         android:id="@+id/IniFavorite"
         android:layout_width="70dp"
-        android:layout_height="60dp"
+        android:layout_height="70dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/corazon_relleno"
         app:layout_constraintEnd_toEndOf="parent"

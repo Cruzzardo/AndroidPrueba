@@ -15,7 +15,7 @@ private lateinit var preferences: SharedPreferences
 private val moshi = Moshi.Builder().build()
 
 class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
+    /*override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -66,5 +66,5 @@ class MainActivity : AppCompatActivity() {
 
     private fun infImage(){
         startActivity(Intent(this, InfoActivity::class.java).apply { putExtra("selectedImage", Image.images[cont]) })
-    }
+    }*/
 }
