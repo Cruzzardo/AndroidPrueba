@@ -1,8 +1,6 @@
 package com.example.androidimg
 
-import android.os.Bundle
 import android.widget.ImageView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 
 class ImageActivity : Fragment(R.layout.activity_image) {
